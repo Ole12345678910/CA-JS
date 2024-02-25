@@ -1,5 +1,4 @@
-// main.js
-
+//details.js
 import { fetchProduct } from './api.js';
 
 const outElement = document.getElementById("infocontainer");
@@ -21,32 +20,38 @@ async function getProduct() {
     try {
         const productData = await fetchProduct(id);
         console.log("API Response:", productData);
-
-        if (productData && Object.keys(productData).length > 0) {
-            displayProduct(productData);
-        } else {
-            outElement.innerHTML = `Product not found...`;
-        }
+        displayProduct(productData);
     } catch (error) {
-        console.error(error);
+        console.error("Error fetching product:", error.message);
         outElement.innerHTML = `Could not fetch product data: ${error.message}`;
     }
 }
 
+
 // Display product details in the DOM
-function displayProduct(productData) {
-    console.log("Product Data to display:", productData);
-    const { title, discountedPrice, image, price } = productData.data;
+function displayProduct(product) {
+    console.log("Product Data to display:", product);
+    const { title, discountedPrice, image = {}, price ,genre, released, description ,ageRating, onSale} = product;
     const productDiv = document.createElement('div');
     productDiv.classList.add('product');
     
     // Set the image HTML with conditional source and alt attributes
-    const imageUrl = image && image.url ? image.url : '';
-    const imageAlt = image && image.alt ? image.alt : '';
+    const imageUrl = image.url || '';
+    const imageAlt = image.alt || '';
+    
+    // Create a variable to hold the discounted price HTML
+    const discountedPriceHTML = (onSale && discountedPrice) ? `<p>Discounted Price: ${discountedPrice}$</p>` : '';
+
+    // Set the productDiv HTML with all details
     productDiv.innerHTML = `
         <img src="${imageUrl}" alt="${imageAlt}">
         <h2>${title}</h2>
-        <p class="price">${price}$</p>
+        <p>${price}$</p>
+        ${discountedPriceHTML}
+        <p>${genre}</p>
+        <p>${released}</p>
+        <p>${description}</p>
+        <p>${ageRating}</p>
     `;
     
     // Append the productDiv to the container

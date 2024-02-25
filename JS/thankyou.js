@@ -1,26 +1,55 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function displayCartItems() {
-    const cartContainer = document.getElementById('cart-container');
-    cartContainer.innerHTML = ''; // Clear existing content
-    
-    let totalPrice = 0;
-    let totalSaved = 0;
 
-    // Calculate total price and total saved based on items in the cart
-    cart.forEach(item => {
-        // Perform calculations here based on item properties
-        totalPrice += parseFloat(item.price);
-        // Update totalSaved based on any discounts or savings
-        // totalSaved += ...
-    });
+//thankyou.js
+let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart items from localStorage or initialize an empty array
 
-    // Update HTML elements with calculated values
-    const totalPriceElement = document.getElementById('total-price');
-    const totalSavedElement = document.getElementById('total-saved');
-    totalPriceElement.textContent = `Total Price: ${totalPrice}$`;
-    totalSavedElement.textContent = `Total Saved: ${totalSaved}$`;
+// Function to calculate the total price of items in the cart
+function calculateTotalPrice(cart) {
+  let totalPrice = 0;
+  cart.forEach((item) => {
+    const itemPrice = item.discountedPrice || item.price;
+    totalPrice += parseFloat(itemPrice);
+  });
+  return totalPrice;
 }
 
-// Call displayCartItems function when the DOM content is loaded
-document.addEventListener('DOMContentLoaded', displayCartItems);
+// Function to display total price
+function displayTotalPrice(totalPrice) {
+  const totalPriceElement = document.getElementById("total-price");
+  totalPriceElement.textContent = `Total Price: ${totalPrice}$`;
+}
+
+// Function to display the number of games in the cart
+function displayNumberOfGames(cart) {
+  const numberOfGamesElement = document.getElementById("number-of-games");
+  numberOfGamesElement.textContent = `Number of Games: ${cart.length}`;
+}
+
+// Function to display user information
+function displayUserInfo() {
+  // Retrieve name and email from localStorage
+  const name = localStorage.getItem("name") || "Unknown";
+  const email = localStorage.getItem("email") || "Unknown";
+
+  // Display name and email
+  const nameElement = document.getElementById("user-name");
+  const emailElement = document.getElementById("user-email");
+
+  nameElement.textContent = `Name: ${name}`;
+  emailElement.textContent = `Email: ${email}`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const totalPrice = calculateTotalPrice(cart);
+  displayTotalPrice(totalPrice);
+  displayNumberOfGames(cart);
+  displayUserInfo(); // Add this line to display name and email
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const totalPrice = calculateTotalPrice(cart);
+  displayTotalPrice(totalPrice);
+  displayNumberOfGames(cart);
+  displayUserInfo(); // Add this line to display name and email
+});

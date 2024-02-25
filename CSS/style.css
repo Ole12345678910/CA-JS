@@ -1,366 +1,414 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
 }
 
 body {
-    background-color: #333751;
+  background-color: #333751;
 }
 
 .product {
-    margin: 0.5rem;
-    width: 300px; /* Set a fixed width for each game */
-    padding: 1rem; /* Add padding to create space inside the game container */
-    border-radius: 10px; /* Add border radius for rounded corners */
-    background-color: #333751; /* Set a background color for the game container */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items vertically */
-    justify-content: space-between; /* Add space between items */
-    color: rgb(207, 188, 153);
-    transition: transform 0.3s ease;
+  margin: 0.5rem;
+  width: 300px; /* Set a fixed width for each game */
+  padding: 1rem; /* Add padding to create space inside the game container */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  background-color: #333751; /* Set a background color for the game container */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: space-between; /* Add space between items */
+  color: rgb(207, 188, 153);
+  transition: transform 0.3s ease;
 }
 
 .product:hover {
-    transform: scale(1.05); /* Increase size on hover */
+  transform: scale(1.05); /* Increase size on hover */
 }
 
 .product img {
-    width: 100%; /* Ensure the image fills the container horizontally */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Add border radius to the image */
+  width: 100%; /* Ensure the image fills the container horizontally */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Add border radius to the image */
 }
 
 .product h2 {
-    padding-top: 0.5rem;
-    font-size: 1.3rem; /* Set font size for game title */
+  padding-top: 0.5rem;
+  font-size: 1.3rem; /* Set font size for game title */
 }
 
 .product p {
-    font-size: 1rem; /* Set font size for game details */
+  font-size: 1rem; /* Set font size for game details */
 }
 
-
 header {
-    display: flex;
-    background: linear-gradient(91deg, #E4CB85 0.52%, #AABAF7 99.14%);
+  display: flex;
+  background: linear-gradient(91deg, #e4cb85 0.52%, #aabaf7 99.14%);
 }
 
 .logoimg {
-    width: 100px;
-    padding: 1rem;
+  width: 100px;
+  padding: 1rem;
 }
 
 .header-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
-    display: flex;
-    justify-content: space-between; /* or space-around */
-    list-style-type: none;
+  display: flex;
+  justify-content: space-between; /* or space-around */
+  list-style-type: none;
 }
 
 li {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 a {
-    text-decoration: none;
-    color: rgb(61, 57, 48);
-    font-family: 'Archivo Black', sans-serif;
-    font-weight: bolder;
+  text-decoration: none;
+  color: rgb(61, 57, 48);
+  font-family: "Archivo Black", sans-serif;
+  font-weight: bolder;
 }
 
-.background-container{
-    background: #292d41eb;
-    display: flex;
+.background-container {
+  background: #292d41eb;
+  display: flex;
 }
 
-#container, #gamecontainer {
-    display: flex;
-    flex-wrap: wrap;
+#container,
+#gamecontainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-h1{
-    padding: 1rem;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 2.5rem;
-    color: wheat;
+h1 {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2.5rem;
+  color: wheat;
 }
 
-.product .price{
-    font-size: 1rem;
-    color: grey;
-    text-decoration: line-through;
+.product .price {
+  font-size: 1rem;
+  color: grey;
+  text-decoration: line-through;
 }
 
-.discountedprice{
-    font-size: 2rem;
-    color: wheat;
+.discountedprice {
+  font-size: 2rem;
+  color: wheat;
 }
 
-.product h2{
-    font-size: 1.6rem;
-    text-overflow: ellipsis;
+.product h2 {
+  font-size: 1.6rem;
+  text-overflow: ellipsis;
 }
 
-.product .discountedprice{
-    font-size: 1.3rem;
+.product .discountedprice {
+  font-size: 1.3rem;
 }
 
-.content img{
-    width: 100px;
+.content img {
+  width: 100px;
 }
 
-.box{
-    display: flex;
-    padding: 2rem;
+.box {
+  display: flex;
+  padding: 2rem;
 }
 
-.box a{
-    color: wheat;
-    font-size: 2rem;
-    margin: 2rem;
+.box a {
+  color: wheat;
+  font-size: 2rem;
+  margin: 2rem;
 }
 
-.content{
-    font-size: 0.7rem;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin: 1rem;
-    color: white;
+.content {
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin: 1rem;
+  color: white;
 }
 
 .filter-label {
-    display: inline-block;
-    margin-right: 10px; /* Adjust the margin as needed */
-    font-size: 16px;
-    color: #333; /* Adjust the color as needed */
-    background-color: #50577ceb;
-    color: wheat;; /* Adjust the background color as needed */
-    padding: 8px 12px; /* Adjust the padding as needed */
-    border-radius: 5px; /* Adjust the border radius as needed */
-    cursor: pointer;
+  display: inline-block;
+  margin-right: 10px; /* Adjust the margin as needed */
+  font-size: 16px;
+  color: #333; /* Adjust the color as needed */
+  background-color: #50577ceb;
+  color: wheat; /* Adjust the background color as needed */
+  padding: 8px 12px; /* Adjust the padding as needed */
+  border-radius: 5px; /* Adjust the border radius as needed */
+  cursor: pointer;
 }
 
 .filter-label:hover {
-    background-color: #797979; /* Adjust the hover background color as needed */
+  background-color: #797979; /* Adjust the hover background color as needed */
 }
 
-.cart-product-details{
-    margin: 0.5rem;
-    width: 200px; /* Set a fixed width for each game */
-    padding: 1rem; /* Add padding to create space inside the game container */
-    border-radius: 10px; /* Add border radius for rounded corners */
-    background-color: #333751; /* Set a background color for the game container */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items vertically */
-    justify-content: space-between; /* Add space between items */
-    color: rgb(207, 188, 153);
+.cart-product-details {
+  margin: 0.5rem;
+  width: 200px; /* Set a fixed width for each game */
+  padding: 1rem; /* Add padding to create space inside the game container */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  background-color: #333751; /* Set a background color for the game container */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: space-between; /* Add space between items */
+  color: rgb(207, 188, 153);
 }
 
 #cart-container {
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cart-item {
-    margin: 10px; /* Adjust spacing between items */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items vertically */
+  margin: 10px; /* Adjust spacing between items */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
 }
 
-.cart-background{
-    background: #292d41eb;
-    display: flex;
-    justify-content: center;
+.cart-background {
+  background: #292d41eb;
+  display: flex;
+  justify-content: center;
 }
 
-.center-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.center-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.center-container h1{
-    justify-content: center;
+.center-container h1 {
+  justify-content: center;
 }
 
 .cart-button-check {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    width: 300px; /* Set the width */
-    height: 70px; /* Set the height */
-    margin: 0 auto; /* Center the container horizontally */
-    border: #3FA535;
-    background-color: #3FA535;
-    border-radius: 10px;
-    font-size: 1.3rem;
-    font-weight: bolder;
-    text-transform: uppercase;
-    color: #E4CB85;
-    border: 1px solid black;
-    transition: all 100ms ease;
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 300px; /* Set the width */
+  height: 70px; /* Set the height */
+  margin: 0 auto; /* Center the container horizontally */
+  border: #3fa535;
+  background-color: #3fa535;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #e4cb85;
+  border: 1px solid black;
+  transition: all 100ms ease;
 }
 
-.cart-button-check:hover{
-    opacity: 0.7;
-    cursor: pointer;
+.cart-button-check:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
-
-.add-to-cart{
-    display: flex;
-    background-color: #3FA535;
-    border: #3FA535;
-    font-size: 1.3rem;
-    width: 100%;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-top: 1rem;
-    padding: 0.5rem;
-    font-weight: bolder;
-    color: #E4CB85;
-    transition: all 100ms ease;
-    border-radius: 5px;
+.add-to-cart {
+  display: flex;
+  background-color: #3fa535;
+  border: #3fa535;
+  font-size: 1.3rem;
+  width: 100%;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-weight: bolder;
+  color: #e4cb85;
+  transition: all 100ms ease;
+  border-radius: 5px;
 }
 
-.add-to-cart:hover{
-    cursor: pointer;
+.add-to-cart:hover {
+  cursor: pointer;
 }
 
-.add-to-cart:active{
-    background-color: #E4CB85;
-
+.add-to-cart:active {
+  background-color: #e4cb85;
 }
 
-.empty-cart-message{
-    font-size: 2rem;
-    margin: 1rem;
-    padding: 1rem;
-    font-weight: bolder;
-    color: wheat;
+.empty-cart-message {
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  font-weight: bolder;
+  color: wheat;
 }
 
-.remove-button{
-    background-color: grey;
-    border: grey;
-    padding: 0.2rem;
-    margin: 10px 0;
+.remove-button {
+  background-color: grey;
+  border: grey;
+  padding: 0.2rem;
+  margin: 10px 0;
 }
 
-.remove-button:hover{
-    background-color: rgb(95, 95, 95);
-    cursor: pointer;
+.remove-button:hover {
+  background-color: rgb(95, 95, 95);
+  cursor: pointer;
 }
 
-.text-first, .text-second
-, .back-to-store{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
+.text-first,
+.text-second,
+.back-to-store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
-.text-first{
-    font-size: 2rem;
-    font-weight: bolder;
+.text-first {
+  font-size: 2rem;
+  font-weight: bolder;
 }
 
-.text-second{
-    color: rgba(245, 222, 179, 0.589);
-    
+.text-second {
+  color: rgba(245, 222, 179, 0.589);
 }
 
-.header-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.header-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.back-to-store{
-    padding: 1rem;
-    margin-top: 1rem;
-    color: rgba(245, 222, 179, 0.589);
+.back-to-store {
+  padding: 1rem;
+  margin-top: 1rem;
+  color: rgba(245, 222, 179, 0.589);
 }
 
-.header-box img{
-    width: 600px;
-    padding: 2rem;
+.header-box img {
+  width: 600px;
+  padding: 2rem;
 }
 
 .result-box {
-    background-color: #292d41eb;
-    padding: 20px; /* Add padding for spacing */
-    border-radius: 10px; /* Add border radius for rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
+  background-color: #292d41eb;
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
 }
 
-.onsale{
-    justify-content: center;
+.onsale {
+  justify-content: center;
 }
 
-#total-price, #total-saved{
-    font-size: 1.4rem;
-    padding: 0.6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#total-price,
+#total-saved {
+  font-size: 1.4rem;
+  padding: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkout-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  .checkout-form h2 {
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .form-group textarea {
-    height: 100px;
-  }
-  
-  button[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.checkout-form h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.summary-box {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#cart-summary {
+  margin-bottom: 40px;
+}
+
+#cart-items div {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: none;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #333;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

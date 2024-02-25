@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <head>
     <script type="module" src="JS/thankyou.js" defer></script>
-    <meta name="description" content="Thank you for your purchase at GameHub! Explore our diverse collection of games and continue your gaming journey. Back to the store now!">
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank you</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+    <script type="module" src="JS/thankyou.js" defer></script>
+    <meta
+      name="description"
+      content="Thank you for your purchase at GameHub! Explore our diverse collection of games and continue your gaming journey. Back to the store now!"
+    />
+  </head>
+  <body>
     <header class="header-box">
-        <img src="assest/GameHub_Logo(1).png" alt="logo bilde av gamehub">
+      <img src="assest/GameHub_Logo(1).png" alt="logo bilde av gamehub" />
     </header>
-    <div id="totalPrice"></div>
-    <div id="cart-container"></div>
-        <div class="result-box">
-            <h1 class="text-first">Thank you</h1>
-            <h2 class="text-second">For your purchase</h2>
-            <a class="back-to-store" href="index.html">Back to the store</a>
-        </div>
-        
+    <main>
+      <section id="cart-summary" class="summary-box">
+        <h2>Order Summary</h2>
+        <div id="cart-items"></div>
+        <div id="user-name"></div>
+        <div id="user-email"></div>
+        <div id="total-price"></div>
+        <div id="number-of-games"></div>
+      </section>
+      <section id="confirmation" class="summary-box">
+        <p>
+          Your order has been successfully placed. Thank you for shopping with
+          us!
+        </p>
+        <a href="index.html">Continue Shopping</a>
+      </section>
+    </main>
     <footer></footer>
-</body>
+  </body>
 </html>

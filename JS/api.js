@@ -1,23 +1,26 @@
-// api.js
-
-/**
- * Function to fetch product data from the API
- * @param {string} id - The ID of the product to fetch
- * @returns {Promise} - A promise that resolves with the fetched product data or rejects with an error
- */
-export async function fetchProduct(id) {
+export async function fetchAllProducts() {
+    return fetchData("https://v2.api.noroff.dev/gamehub");
+  }
+  
+  export async function fetchProducts() {
+    const allProducts = await fetchAllProducts();
+    return allProducts.filter(product => product.onSale === true);
+  }
+  
+  export async function fetchProduct(id) {
+    return fetchData(`https://v2.api.noroff.dev/gamehub/${id}`);
+  }
+  
+  async function fetchData(url) {
     try {
-        const api = `https://v2.api.noroff.dev/gamehub/${id}`;
-        const response = await fetch(api);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const productData = await response.json();
-        if (!productData || !productData.data) {
-            throw new Error('Product data not found');
-        }
-        return productData.data;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! ${response.status}`);
+      }
+      const responseData = await response.json();
+      return responseData.data;
     } catch (error) {
-        throw new Error(`Failed to fetch product data: ${error.message}`);
+      console.error(error.message);
+      return [];
     }
-}
+  }

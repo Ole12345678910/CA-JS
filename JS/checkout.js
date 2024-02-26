@@ -1,76 +1,92 @@
-// Retrieve cart items from localStorage or initialize an empty array
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart;
+try {
+  // Attempt to parse the cart from localStorage or initialize an empty array
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+} catch (error) {
+  // Log an error if there's an issue parsing the cart
+  console.error("Error loading cart:", error);
+  cart = [];
+}
 
-// Function to display cart items
 function displayCartItems() {
+  // Clear existing content in the cart container
   const cartContainer = document.getElementById("cart-container");
-  cartContainer.innerHTML = ""; // Clear existing content
+  cartContainer.innerHTML = "";
 
   let totalPrice = 0;
   let totalSaved = 0;
 
   if (cart.length === 0) {
-    displayEmptyCartMessage(cartContainer); // Display empty cart message if cart is empty
+    // Display empty cart message if cart is empty
+    displayEmptyCartMessage(cartContainer);
   } else {
     cart.forEach((item) => {
-      const listItem = createCartItemElement(item); // Create a list item for each cart item
-      cartContainer.appendChild(listItem); // Append the list item to the cart container
-      const { displayPrice, savedAmount } = calculatePriceAndSaved(item); // Calculate the price and saved amount for the item
-      totalPrice += parseFloat(displayPrice); // Add the display price to the total price
-      totalSaved += parseFloat(savedAmount); // Add the saved amount to the total saved
+      // Create a list item for each cart item
+      const listItem = createCartItemElement(item);
+      // Append the list item to the cart container
+      cartContainer.appendChild(listItem);
+      // Calculate the price and saved amount for the item
+      const { displayPrice, savedAmount } = calculatePriceAndSaved(item);
+      // Add the display price to the total price
+      totalPrice += parseFloat(displayPrice);
+      // Add the saved amount to the total saved
+      totalSaved += parseFloat(savedAmount);
     });
   }
 
-  displayTotalPriceAndSaved(totalPrice, totalSaved); // Display the total price and saved amount
+  // Display the total price and saved amount
+  displayTotalPriceAndSaved(totalPrice, totalSaved);
 }
 
-// Function to create a cart item element
 function createCartItemElement(item) {
+  // Create a div element for the cart item
   const listItem = document.createElement("div");
   listItem.classList.add("cart-item");
-  const details = createCartItemDetailsElement(item); // Create details for the cart item
+  // Create details for the cart item
+  const details = createCartItemDetailsElement(item);
+  // Append the details to the list item
   listItem.appendChild(details);
   return listItem;
 }
 
-// Function to create details for a cart item
 function createCartItemDetailsElement(item) {
+  // Create a div element for the cart product details
   const details = document.createElement("div");
   details.classList.add("cart-product-details");
+  // Determine the display price for the item
   const displayPrice = item.discountedPrice || item.price;
+  // Populate the details with HTML content
   details.innerHTML = `
-        <img src="${item.image.url}" alt="${item.title}" class="product-image">
-        <h2>${item.title}</h2>
-        <p>Price: ${displayPrice}$</p>
-        ${
-          item.onSale ? `<p>Discounted Price: ${item.discountedPrice}$</p>` : ""
-        }
-    `;
+    <img src="${item.image.url}" alt="${item.title}" class="product-image">
+    <h2>${item.title}</h2>
+    <p>Price: ${displayPrice}$</p>
+    ${item.onSale ? `<p>Discounted Price: ${item.discountedPrice}$</p>` : ""}
+  `;
   return details;
 }
 
-// Function to calculate the price and saved amount for a cart item
 function calculatePriceAndSaved(item) {
   let displayPrice = item.discountedPrice || item.price;
   let savedAmount = 0;
   if (item.discountedPrice && item.price) {
-    savedAmount = parseFloat(item.price) - parseFloat(item.discountedPrice); // Calculate the saved amount if item is on sale
+    // Calculate the saved amount if item is on sale
+    savedAmount = parseFloat(item.price) - parseFloat(item.discountedPrice);
   }
   return { displayPrice, savedAmount };
 }
 
-// Function to display total price and saved amount
 function displayTotalPriceAndSaved(totalPrice, totalSaved) {
-  const totalPriceRounded = Math.round(totalPrice); // Round the total price
-  const totalSavedRounded = Math.round(totalSaved); // Round the total saved amount
+  // Round the total price and total saved amount
+  const totalPriceRounded = Math.round(totalPrice);
+  const totalSavedRounded = Math.round(totalSaved);
 
+  // Display the total price and total saved amount
   const totalPriceElement = document.getElementById("total-price");
   const totalSavedElement = document.getElementById("total-saved");
-  totalPriceElement.textContent = `Total Price: ${totalPriceRounded}$`; // Display the total price
-  totalSavedElement.textContent = `Total Saved: ${totalSavedRounded}$`; // Display the total saved amount
+  totalPriceElement.textContent = `Total Price: ${totalPriceRounded}$`;
+  totalSavedElement.textContent = `Total Saved: ${totalSavedRounded}$`;
 }
 
-// Function to handle form submission
 function handleFormSubmission(event) {
   event.preventDefault(); // Prevent the default form submission behavior
 
@@ -88,14 +104,15 @@ function handleFormSubmission(event) {
 
   // Delay the redirect to simulate loading (optional)
   setTimeout(() => {
-    // Redirect to the 'thankyou.html' page
+    // Redirect to the 'thankyou.html' page after a delay
     window.location.href = "thankyou.html";
   }, 2000); // Adjust the delay time as needed
 }
 
-// Call displayCartItems function when the cart.html page loads
 document.addEventListener("DOMContentLoaded", () => {
+  // Display cart items when the page is loaded
   displayCartItems();
   const form = document.getElementById("checkout-form");
-  form.addEventListener("submit", handleFormSubmission); // Add event listener to form submission
+  // Add event listener to form submission
+  form.addEventListener("submit", handleFormSubmission);
 });

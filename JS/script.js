@@ -1,9 +1,7 @@
 import { fetchProducts } from "./api.js";
-import { displayProducts } from "./utility.js"; // Assuming displayProducts is defined in utility.js
+import { displayProducts } from "./utility.js";
 
 let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart items from local storage or initialize an empty array
-
-console.log("Gamehub"); // Log a message to the console indicating the start of the script
 
 const container = document.querySelector("#container"); // Select the container element where products will be displayed
 

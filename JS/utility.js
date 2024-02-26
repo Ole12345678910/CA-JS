@@ -149,7 +149,7 @@ function createRemoveButton(item, removeFromCart) {
 // Function to display an empty cart message
 export function displayEmptyCartMessage(container) {
   container.innerHTML =
-    '<div class="empty-cart-message">Your cart is empty...</div>'; // Display a message indicating that the cart is empty
+    '<div class="empty-cart-message">Your cart is empty...</div>';
 }
 
 // Function to display a product
@@ -169,7 +169,6 @@ export function displayProducts(container, products, cart) {
 
 // Function to display product details in the DOM
 export function displayProductDetail(product, container) {
-  // Extract product details
   const {
     title,
     discountedPrice,
@@ -184,7 +183,7 @@ export function displayProductDetail(product, container) {
 
   // Create a div element for the product
   const productDiv = document.createElement("div");
-  productDiv.classList.add("product"); // Add the 'product' class to the div
+  productDiv.classList.add("product");
 
   // Set the image HTML with conditional source and alt attributes
   const imageUrl = image.url || "";

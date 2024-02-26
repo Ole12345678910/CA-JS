@@ -1,10 +1,12 @@
-
 //thankyou.js
 let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart items from localStorage or initialize an empty array
 
 // Function to calculate the total price of items in the cart
 function calculateTotalPrice(cart) {
-  return cart.reduce((total, item) => total + parseFloat(item.discountedPrice || item.price), 0);
+  return cart.reduce(
+    (total, item) => total + parseFloat(item.discountedPrice || item.price),
+    0
+  );
 }
 
 // Function to display total price as a whole number

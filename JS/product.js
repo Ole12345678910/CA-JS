@@ -9,24 +9,24 @@ const filters = document.querySelector("#filters");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Fetch and display products based on selected filters
-async function fetchAndDisplayProducts() {
+async function fetchDisplay() {
   try {
     const products = await fetchAllProducts();
     out.innerHTML = ""; // Clear the container
-    displayFilteredProducts(products);
+    displayFiltered(products);
   } catch (error) {
     console.error("Error fetching products:", error.message);
   }
 }
 
 // Display filtered products based on selected filters
-function displayFilteredProducts(products) {
+function displayFiltered(products) {
   const filteredProducts = filterProducts(products, filters);
   filteredProducts.forEach((product) => displayProduct(product, out, cart));
 }
 
 // Add event listener to filters for change event
-filters.addEventListener("change", fetchAndDisplayProducts);
+filters.addEventListener("change", fetchDisplay);
 
 // Initial fetch and display of products when the page loads
-fetchAndDisplayProducts();
+fetchDisplay();

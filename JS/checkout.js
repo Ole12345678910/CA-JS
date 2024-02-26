@@ -18,15 +18,15 @@ function displayCartItems() {
 
   if (cart.length === 0) {
     // Display empty cart message if cart is empty
-    displayEmptyCartMessage(cartContainer);
+    cartMessage(cartContainer);
   } else {
     cart.forEach((item) => {
       // Create a list item for each cart item
-      const listItem = createCartItemElement(item);
+      const listItem = createItem(item);
       // Append the list item to the cart container
       cartContainer.appendChild(listItem);
       // Calculate the price and saved amount for the item
-      const { displayPrice, savedAmount } = calculatePriceAndSaved(item);
+      const { displayPrice, savedAmount } = calculatePrice(item);
       // Add the display price to the total price
       totalPrice += parseFloat(displayPrice);
       // Add the saved amount to the total saved
@@ -35,21 +35,21 @@ function displayCartItems() {
   }
 
   // Display the total price and saved amount
-  displayTotalPriceAndSaved(totalPrice, totalSaved);
+  priceAndSaved(totalPrice, totalSaved);
 }
 
-function createCartItemElement(item) {
+function createItem(item) {
   // Create a div element for the cart item
   const listItem = document.createElement("div");
   listItem.classList.add("cart-item");
   // Create details for the cart item
-  const details = createCartItemDetailsElement(item);
+  const details = createItemDetail(item);
   // Append the details to the list item
   listItem.appendChild(details);
   return listItem;
 }
 
-function createCartItemDetailsElement(item) {
+function createItemDetail(item) {
   // Create a div element for the cart product details
   const details = document.createElement("div");
   details.classList.add("cart-product-details");
@@ -65,7 +65,7 @@ function createCartItemDetailsElement(item) {
   return details;
 }
 
-function calculatePriceAndSaved(item) {
+function calculatePrice(item) {
   let displayPrice = item.discountedPrice || item.price;
   let savedAmount = 0;
   if (item.discountedPrice && item.price) {
@@ -75,7 +75,7 @@ function calculatePriceAndSaved(item) {
   return { displayPrice, savedAmount };
 }
 
-function displayTotalPriceAndSaved(totalPrice, totalSaved) {
+function priceAndSaved(totalPrice, totalSaved) {
   // Round the total price and total saved amount
   const totalPriceRounded = Math.round(totalPrice);
   const totalSavedRounded = Math.round(totalSaved);

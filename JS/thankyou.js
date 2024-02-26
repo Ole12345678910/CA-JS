@@ -1,4 +1,3 @@
-//thankyou.js
 let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart items from localStorage or initialize an empty array
 
 // Function to calculate the total price of items in the cart
@@ -16,7 +15,7 @@ function displayTotalPrice(totalPrice) {
 }
 
 // Function to display the number of games in the cart
-function displayNumberOfGames(cart) {
+function numberGames(cart) {
   displayElementText("number-of-games", `Number of Games: ${cart.length}`);
 }
 
@@ -39,6 +38,6 @@ function displayElementText(id, text) {
 document.addEventListener("DOMContentLoaded", () => {
   const totalPrice = calculateTotalPrice(cart);
   displayTotalPrice(totalPrice);
-  displayNumberOfGames(cart);
+  numberGames(cart);
   displayUserInfo(); // Add this line to display name and email
 });

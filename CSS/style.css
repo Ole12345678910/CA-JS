@@ -1,13 +1,16 @@
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
 }
 
+/* Body Styles */
 body {
   background-color: #333751;
 }
 
+/* Product Styles */
 .product {
   height: auto;
   margin: 0.5rem;
@@ -16,32 +19,33 @@ body {
   border-radius: 10px;
   background-color: #333751;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items vertically */
-  justify-content: space-between; /* Add space between items */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: rgb(207, 188, 153);
   transition: transform 0.3s ease;
 }
 
 .product:hover {
-  transform: scale(1.02); /* Increase size on hover */
+  transform: scale(1.02);
 }
 
 .product img {
-  width: 100%; /* Ensure the image fills the container horizontally */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Add border radius to the image */
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .product h2 {
   padding-top: 0.5rem;
-  font-size: 1.3rem; /* Set font size for game title */
+  font-size: 1.3rem;
 }
 
 .product p {
-  font-size: 1rem; /* Set font size for game details */
+  font-size: 1rem;
 }
 
+/* Header Styles */
 header {
   align-items: center;
   display: flex;
@@ -53,6 +57,7 @@ header {
   padding: 1rem;
 }
 
+/* List Styles */
 ul {
   list-style-type: none;
 }
@@ -61,6 +66,7 @@ li {
   font-size: 1.3rem;
 }
 
+/* Link Styles */
 a {
   text-decoration: none;
   color: rgb(61, 57, 48);
@@ -68,17 +74,20 @@ a {
   font-weight: bolder;
 }
 
+/* Background Container Styles */
 .background-container {
   background: #292d41eb;
   min-height: 100vh;
 }
 
+/* Container Styles */
 #container,
 #gamecontainer {
   display: flex;
   flex-wrap: wrap;
 }
 
+/* Heading Styles */
 h1 {
   padding: 1rem;
   display: flex;
@@ -86,6 +95,7 @@ h1 {
   color: wheat;
 }
 
+/* Price Styles */
 .product .price {
   font-size: 1rem;
   color: grey;
@@ -106,6 +116,7 @@ h1 {
   font-size: 1.3rem;
 }
 
+/* Content Styles */
 .content img {
   width: 100px;
 }
@@ -125,53 +136,59 @@ h1 {
   color: white;
 }
 
+/* Filter Label Styles */
 .filter-label {
   display: inline-block;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-right: 10px;
   font-size: 16px;
-  color: #333; /* Adjust the color as needed */
+  color: #333;
   background-color: #50577ceb;
-  color: wheat; /* Adjust the background color as needed */
-  padding: 8px 12px; /* Adjust the padding as needed */
-  border-radius: 5px; /* Adjust the border radius as needed */
+  color: wheat;
+  padding: 8px 12px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .filter-label:hover {
-  background-color: #797979; /* Adjust the hover background color as needed */
+  background-color: #797979;
 }
 
+/* Cart Product Details Styles */
 .cart-product-details {
   margin: 0.5rem;
-  width: 200px; /* Set a fixed width for each game */
-  padding: 1rem; /* Add padding to create space inside the game container */
-  border-radius: 10px; /* Add border radius for rounded corners */
-  background-color: #333751; /* Set a background color for the game container */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items vertically */
-  justify-content: space-between; /* Add space between items */
+  width: 200px;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #333751;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: rgb(207, 188, 153);
 }
 
+/* Cart Container Styles */
 #cart-container {
   flex-direction: column;
   justify-content: center;
 }
 
+/* Cart Item Styles */
 .cart-item {
-  margin: 10px; /* Adjust spacing between items */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items vertically */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Cart Background Styles */
 .cart-background {
   background: #292d41eb;
 }
 
+/* Center Container Styles */
 .center-container {
   display: flex;
-  align-items: center; /* Vertically center */
+  align-items: center;
   flex-direction: column;
 }
 
@@ -179,13 +196,14 @@ h1 {
   justify-content: center;
 }
 
+/* Checkout Button Styles */
 .cart-button-check {
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  width: 300px; /* Set the width */
-  height: 70px; /* Set the height */
-  margin: 0 auto; /* Center the container horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  margin: 0 auto;
   border: #4caf50;
   background-color: #4caf50;
   border-radius: 10px;
@@ -202,14 +220,15 @@ h1 {
   cursor: pointer;
 }
 
+/* Add to Cart Button Styles */
 .add-to-cart {
   display: flex;
   background-color: #4caf50;
   border: #4caf50;
   font-size: 1.3rem;
   width: 100%;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   padding: 0.5rem;
   font-weight: bolder;
@@ -226,6 +245,7 @@ h1 {
   background-color: #e4cb85;
 }
 
+/* Empty Cart Message Styles */
 .empty-cart-message {
   font-size: 2rem;
   margin: 1rem;
@@ -234,6 +254,7 @@ h1 {
   color: wheat;
 }
 
+/* Remove Button Styles */
 .remove-button {
   background-color: grey;
   border: grey;
@@ -246,6 +267,7 @@ h1 {
   cursor: pointer;
 }
 
+/* Text Styles */
 .text-first,
 .text-second,
 .back-to-store {
@@ -264,32 +286,38 @@ h1 {
   color: rgba(245, 222, 179, 0.589);
 }
 
+/* Header Box Styles */
 .header-box {
   display: flex;
   justify-content: space-around;
 }
+
 .header-box img {
   width: 600px;
   padding: 2rem;
 }
 
+/* Back to Store Styles */
 .back-to-store {
   padding: 1rem;
   margin-top: 1rem;
   color: rgba(245, 222, 179, 0.589);
 }
 
+/* Result Box Styles */
 .result-box {
   background-color: #292d41eb;
-  padding: 20px; /* Add padding for spacing */
-  border-radius: 10px; /* Add border radius for rounded corners */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* On Sale Styles */
 .onsale {
   justify-content: center;
 }
 
+/* Total Price and Total Saved Styles */
 #total-price,
 #total-saved {
   color: wheat;
@@ -301,6 +329,7 @@ h1 {
   align-items: center;
 }
 
+/* Checkout Form Styles */
 .checkout-form {
   max-width: 400px;
   margin: 2rem auto;
@@ -356,6 +385,7 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
+/* Summary Box Styles */
 .summary-box {
   background-color: rgb(122, 126, 153);
   border: 1px black;
@@ -373,11 +403,13 @@ button[type="submit"]:hover {
   margin-bottom: 10px;
 }
 
+/* Footer Styles */
 footer {
   text-align: center;
   margin-top: 40px;
 }
 
+/* Loading Overlay Styles */
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -411,12 +443,14 @@ footer {
   }
 }
 
+/* Receipt Box Styles */
 .receipt-box {
   max-width: 700px;
   margin: auto;
   padding: 2rem;
 }
 
+/* Header Nav Styles */
 .header-nav {
   display: flex;
 }

@@ -74,7 +74,7 @@ export function createProductDiv(
         <h2>${title}</h2>
         ${
           displayDiscountedPrice
-            ? `<p class="discounted-price">${discountedPrice}$</p>`
+            ? `<p class="discounted-price">Discounted ${discountedPrice}$</p>`
             : ""
         }
         <p class="priceinfo">${price}$</p>
@@ -85,13 +85,13 @@ export function createProductDiv(
 
 // Function to create an "Add to Cart" button
 export function createAddToCartButton(product, cart) {
-  const addToCartButton = document.createElement("button"); // Create a button element
-  addToCartButton.textContent = "Add to Cart"; // Set the button text content
+  const addToCartButton = document.createElement("button"); 
+  addToCartButton.textContent = "Add to Cart"; 
   addToCartButton.classList.add("add-to-cart"); // Add the 'add-to-cart' class to the button
 
   // Add an event listener to handle clicks on the button
   addToCartButton.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
     addToCart(product, cart); // Add the product to the cart when the button is clicked
   });
 
@@ -120,8 +120,8 @@ export function createCartItem(item, removeFromCart) {
 
 // Function to create details for a cart item
 function createCartItemDetails(item) {
-  const details = document.createElement("div"); // Create a div element
-  details.classList.add("cart-product-details"); // Add the 'cart-product-details' class to the div
+  const details = document.createElement("div");
+  details.classList.add("cart-product-details"); 
 
   // Populate the details div with HTML content
   details.innerHTML = `
@@ -136,8 +136,8 @@ function createCartItemDetails(item) {
 
 // Function to create a remove button for a cart item
 function createRemoveButton(item, removeFromCart) {
-  const removeButton = document.createElement("button"); // Create a button element
-  removeButton.textContent = "Remove"; // Set the button text content
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove"; 
   removeButton.classList.add("remove-button"); // Add the 'remove-button' class to the button
 
   // Add an event listener to handle clicks on the button
@@ -147,7 +147,7 @@ function createRemoveButton(item, removeFromCart) {
 }
 
 // Function to display an empty cart message
-export function displayEmptyCartMessage(container) {
+export function cartMessage(container) {
   container.innerHTML =
     '<div class="empty-cart-message">Your cart is empty...</div>';
 }

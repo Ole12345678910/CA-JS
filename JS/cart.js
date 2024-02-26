@@ -1,4 +1,4 @@
-import { displayEmptyCartMessage, createCartItem } from "./utility.js";
+import { cartMessage, createCartItem } from "./utility.js";
 
 // Initialize cart array
 let cart = [];
@@ -23,7 +23,7 @@ function displayCartItems() {
   // Check if the cart is empty
   if (cart.length === 0) {
     // Display empty cart message if cart is empty
-    displayEmptyCartMessage(cartContainer);
+    cartMessage(cartContainer);
   } else {
     // Loop through each item in the cart
     cart.forEach((item) => {

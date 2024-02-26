@@ -412,3 +412,9 @@ footer {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+.receipt-box{
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+}

@@ -1,5 +1,4 @@
 
-
 //thankyou.js
 let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart items from localStorage or initialize an empty array
 
@@ -13,10 +12,11 @@ function calculateTotalPrice(cart) {
   return totalPrice;
 }
 
-// Function to display total price
+// Function to display total price as a whole number
 function displayTotalPrice(totalPrice) {
   const totalPriceElement = document.getElementById("total-price");
-  totalPriceElement.textContent = `Total Price: ${totalPrice}$`;
+  const roundedTotalPrice = Math.round(totalPrice); // Round the total price to the nearest whole number
+  totalPriceElement.textContent = `Total Price: ${roundedTotalPrice}$`;
 }
 
 // Function to display the number of games in the cart
@@ -38,14 +38,6 @@ function displayUserInfo() {
   nameElement.textContent = `Name: ${name}`;
   emailElement.textContent = `Email: ${email}`;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const totalPrice = calculateTotalPrice(cart);
-  displayTotalPrice(totalPrice);
-  displayNumberOfGames(cart);
-  displayUserInfo(); // Add this line to display name and email
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const totalPrice = calculateTotalPrice(cart);

@@ -4,39 +4,34 @@ let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart item
 
 // Function to calculate the total price of items in the cart
 function calculateTotalPrice(cart) {
-  let totalPrice = 0;
-  cart.forEach((item) => {
-    const itemPrice = item.discountedPrice || item.price;
-    totalPrice += parseFloat(itemPrice);
-  });
-  return totalPrice;
+  return cart.reduce((total, item) => total + parseFloat(item.discountedPrice || item.price), 0);
 }
 
 // Function to display total price as a whole number
 function displayTotalPrice(totalPrice) {
-  const totalPriceElement = document.getElementById("total-price");
   const roundedTotalPrice = Math.round(totalPrice); // Round the total price to the nearest whole number
-  totalPriceElement.textContent = `Total Price: ${roundedTotalPrice}$`;
+  displayElementText("total-price", `Total Price: ${roundedTotalPrice}$`);
 }
 
 // Function to display the number of games in the cart
 function displayNumberOfGames(cart) {
-  const numberOfGamesElement = document.getElementById("number-of-games");
-  numberOfGamesElement.textContent = `Number of Games: ${cart.length}`;
+  displayElementText("number-of-games", `Number of Games: ${cart.length}`);
 }
 
 // Function to display user information
 function displayUserInfo() {
-  // Retrieve name and email from localStorage
   const name = localStorage.getItem("name") || "Unknown";
   const email = localStorage.getItem("email") || "Unknown";
+  displayElementText("user-name", `Name: ${name}`);
+  displayElementText("user-email", `Email: ${email}`);
+}
 
-  // Display name and email
-  const nameElement = document.getElementById("user-name");
-  const emailElement = document.getElementById("user-email");
-
-  nameElement.textContent = `Name: ${name}`;
-  emailElement.textContent = `Email: ${email}`;
+// Function to update element text content by ID
+function displayElementText(id, text) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.textContent = text;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

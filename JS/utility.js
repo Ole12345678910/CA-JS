@@ -72,12 +72,12 @@ export function createProductDiv(
   productDiv.innerHTML = `
         <img src="${imageUrl}" alt="${title}">
         <h2>${title}</h2>
-        <p class="priceinfo">${price}$</p>
         ${
           displayDiscountedPrice
             ? `<p class="discounted-price">${discountedPrice}$</p>`
             : ""
         }
+        <p class="priceinfo">${price}$</p>
     `;
 
   return productDiv; // Return the created product div

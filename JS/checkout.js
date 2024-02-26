@@ -1,6 +1,5 @@
-//checkout.js
-
-let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart items from localStorage or initialize an empty array
+// Retrieve cart items from localStorage or initialize an empty array
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Function to display cart items
 function displayCartItems() {
@@ -29,10 +28,8 @@ function displayCartItems() {
 function createCartItemElement(item) {
   const listItem = document.createElement("div");
   listItem.classList.add("cart-item");
-
   const details = createCartItemDetailsElement(item); // Create details for the cart item
   listItem.appendChild(details);
-
   return listItem;
 }
 
@@ -97,10 +94,8 @@ function handleFormSubmission(event) {
 }
 
 // Call displayCartItems function when the cart.html page loads
-document.addEventListener("DOMContentLoaded", displayCartItems);
-
-// Add event listener to form submission
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  displayCartItems();
   const form = document.getElementById("checkout-form");
   form.addEventListener("submit", handleFormSubmission); // Add event listener to form submission
 });

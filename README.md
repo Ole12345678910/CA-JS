@@ -8,4 +8,4 @@ This project is a dynamic game hub website for a school assignment, making shopp
 
 ## Built With
 
-- CSS and HTML
+- CSS, HTML JS
